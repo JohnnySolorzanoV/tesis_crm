@@ -1,6 +1,7 @@
 class Usuario {
-  constructor({ cedula, nombre, correo, contrasena, rol }) {
-    this.cedula = cedula;
+  constructor({ id, identificacion, nombre, correo, contrasena, rol }) {
+    this.id = id;
+    this.identificacion = identificacion;
     this.nombre = nombre;
     this.correo = correo;
     this.contrasena = contrasena;

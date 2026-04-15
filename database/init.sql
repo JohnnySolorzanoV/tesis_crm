@@ -1,5 +1,6 @@
 CREATE TABLE Usuario (
-    cedula VARCHAR(10) PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
+    identificacion VARCHAR(10) UNIQUE,
     nombre VARCHAR(100),
     correo VARCHAR(100) UNIQUE,
     contrasena VARCHAR(255),
