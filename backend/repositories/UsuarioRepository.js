@@ -1,5 +1,5 @@
 const Usuario = require('../entities/Usuario');
-const { executeSQL } = require('../external_integrations/db');
+const { executeSQL } = require('../external_integrations/baseDatos');
 
 async function findByCedula(cedula) {
   const result = await executeSQL(
