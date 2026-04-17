@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { testConnection } = require('./external_integrations/db');
+const { testConnection } = require('./external_integrations/baseDatos');
 
 // Importar rutas
 const registroRoutes = require('./api/registro');
