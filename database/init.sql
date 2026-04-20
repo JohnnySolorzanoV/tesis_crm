@@ -7,9 +7,9 @@ CREATE TABLE Usuario (
     rol VARCHAR(20) 
 );
 
-CREATE TABLE RepositorioChatbot (
+CREATE TABLE Chatbot (
     idConsulta SERIAL PRIMARY KEY,
-    cedula_cliente VARCHAR(10) REFERENCES Usuario(cedula),
+    cedula_cliente VARCHAR(10) REFERENCES Usuario(identificacion),
     preguntaUsuarios TEXT,
     respuestaIA TEXT,
     fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP
@@ -17,8 +17,22 @@ CREATE TABLE RepositorioChatbot (
 
 CREATE TABLE Cita (
     idCita SERIAL PRIMARY KEY,
-    cedula_cliente VARCHAR(10) REFERENCES Usuario(cedula),
+    cedula_cliente VARCHAR(10) REFERENCES Usuario(identificacion),
     fechaHora TIMESTAMP,
     motivo TEXT,
     estado VARCHAR(20) DEFAULT 'Pendiente' 
+);
+
+CREATE TABLE Documento (
+    idDocumento SERIAL PRIMARY KEY,
+    nombreArchivo VARCHAR(255) NOT NULL,
+    rutaArchivo VARCHAR(500) NOT NULL, 
+    tipoDocumento VARCHAR(50), 
+    fechaSubida TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    cedulaUsuario VARCHAR(10),
+
+    CONSTRAINT fk_usuario_documento 
+        FOREIGN KEY (cedulaUsuario) 
+        REFERENCES Usuario(identificacion) 
+        ON DELETE CASCADE 
 );
