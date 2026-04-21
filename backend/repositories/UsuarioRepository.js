@@ -10,6 +10,15 @@ async function findByCedula(cedula) {
   return row ? new Usuario(row) : null;
 }
 
+async function findByCorreo(correo) {
+  const result = await executeSQL(
+    'SELECT cedula, nombre, correo, contrasena, rol FROM Usuario WHERE correo = $1',
+    [correo]
+  );
+  const row = result.rows[0];
+  return row ? new Usuario(row) : null;
+}
+
 async function findAll() {
   const result = await executeSQL(
     'SELECT cedula, nombre, correo, contrasena, rol FROM Usuario'
@@ -43,6 +52,7 @@ async function deleteByCedula(cedula) {
 
 const UsuarioRepository = {
   findByCedula,
+  findByCorreo,
   findAll,
   create,
   update,
