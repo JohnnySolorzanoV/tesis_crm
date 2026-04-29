@@ -3,7 +3,7 @@ const { executeSQL } = require('../external_integrations/baseDatos');
 
 async function findbyId(id) {
     const resultado = await executeSQL(
-        'SELECT id, fecha, hora, paciente_cedula, doctor_cedula FROM Cita WHERE id = $1', 
+        'SELECT id, fecha, hora, idpaciente, idmedico FROM Cita WHERE id = $1', 
         [id]    );
     const row = resultado.rows[0];
     return row ? new cita(row) : null;
@@ -11,14 +11,14 @@ async function findbyId(id) {
 
 async function findAll () {
     const resultado = await executeSQL(
-        'SELECT id, fecha, hora, paciente_cedula, doctor_cedula FROM Cita'
+        'SELECT id, fecha, idpaciente, idmedico FROM Cita'
     );
     return resultado.rows.map((row) => new cita(row));
 }
 
 async function create(cita) {
     const resultado = await executeSQL(
-        'INSERT INTO Cita (fecha, hora, paciente_cedula, doctor_cedula) VALUES ($1, $2, $3, $4) RETURNING *',
+        'INSERT INTO Cita (fecha, hora, idpaciente, idmedico) VALUES ($1, $2, $3, $4) RETURNING *',
         [cita.fecha, cita.hora, cita.paciente_cedula, cita.doctor_cedula]
     );
     return new cita(resultado.rows[0]);

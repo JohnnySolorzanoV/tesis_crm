@@ -2,17 +2,19 @@ const express = require('express');
 const cors = require('cors');
 const { testConnection } = require('./external_integrations/baseDatos');
 
+const app = express();
+const puerto = 3000;
+app.use(cors());
+app.use(express.json());
+
 // Importar rutas
 const registroRoutes = require('./api/registro');
 const loginRoutes = require('./api/login');
+const abogadoRoutes = require('./api/abogado');
 
-const app = express();
-const puerto = 3000;
-
-app.use(cors());
-app.use(express.json());
-app.use('/api/registro', registroRoutes);
 app.use('/api', loginRoutes);
+app.use('/api/registro', registroRoutes);
+app.use('/api/abogado', abogadoRoutes);
 
 app.get('/api/estado', (req, res) => {
     res.json({ mensaje: '¡El servidor del CRM Experta&Abogados está funcionando perfectamente!' });

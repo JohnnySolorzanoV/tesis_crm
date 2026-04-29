@@ -7,3 +7,5 @@ class Abogado extends Usuario {
         this.num_licencia = num_licencia;
     }
 }
+
+module.exports = Abogado;
