@@ -22,7 +22,7 @@ async function findAll() {
 async function create(abogado) {
   const usuarioResult = await executeSQL(
     'INSERT INTO Usuario (identificacion, nombre, correo, contrasena, rol) VALUES ($1, $2, $3, $4, $5) RETURNING id',
-    [abogado.identificacion || abogado.cedula, abogado.nombre, abogado.correo, abogado.contrasena, 'abogado']
+    [abogado.identificacion, abogado.nombre, abogado.correo, abogado.contrasena, 'abogado']
   );
 
   const abogadoResult = await executeSQL(
@@ -32,7 +32,7 @@ async function create(abogado) {
 
   return new Abogado({
     id: abogadoResult.rows[0].id,
-    identificacion: abogado.identificacion || abogado.cedula,
+    identificacion: abogado.identificacion,
     nombre: abogado.nombre,
     correo: abogado.correo,
     contrasena: abogado.contrasena,
