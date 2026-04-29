@@ -11,7 +11,7 @@ CREATE TABLE ABOGADO (
     id SERIAL PRIMARY KEY,
     id_usuario INTEGER UNIQUE REFERENCES Usuario(id),
     num_licencia VARCHAR(10) UNIQUE, 
-    especialidad VARCHAR(100),
+    especialidad VARCHAR(100)
 );
 
 CREATE TABLE Chatbot (

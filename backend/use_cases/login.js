@@ -11,7 +11,7 @@ async function Login({ correo, contrasena }) {
   if (!contrasenaValida) {
     throw new Error('Contraseña incorrecta');
   }
-  const token = jwt.sign({ cedula: usuario.cedula, rol: usuario.rol }, 'secreto', { expiresIn: '1h' });
+  const token = jwt.sign({ identificacion: usuario.identificacion, rol: usuario.rol }, 'secreto', { expiresIn: '1h' });
   usuario.token = token;
   return usuario;
 }
