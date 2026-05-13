@@ -8,8 +8,11 @@ const route = useRoute()
   <p><strong>Ruta actual:</strong> {{ route.path }}</p>
   <nav class="container"> 
     <RouterLink to="/frontendCRM"> Inicio </RouterLink>
-    <RouterLink to="/inicioSesion"> Inicio de sesión </RouterLink>
+    <RouterLink to="/inicioCRM"> Inicio CRM </RouterLink>
     <RouterLink to="/admin"> Admin </RouterLink>
+    <RouterLink to="/loginPerfil"> Iniciar sesión </RouterLink>
+    <RouterLink to="/crearPerfil
+    "> Registrarse </RouterLink>
   </nav>
   <main class="container">
     <RouterView />

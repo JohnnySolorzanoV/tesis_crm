@@ -1,7 +1,7 @@
 <script setup>
 
 </script>
-
+//debo hacerlo funcionar con el boton de Inicio de sesion de Inicio CRM
 <template>
   <div class="container text center">
     <h1>EXPERTA&ABOGADOS</h1>
