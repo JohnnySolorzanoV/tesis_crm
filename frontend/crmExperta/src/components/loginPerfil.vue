@@ -3,8 +3,16 @@
 </script>
 //debo hacerlo funcionar con el boton de Inicio de sesion de Inicio CRM
 <template>
-  <div class="container text-center">
-    <h1>EXPERTA&ABOGADOS</h1>
-    <h7>Firma legal con especialistas en cada área jurídica</h7>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">✉️</span>
+    <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="correoElectronico" aria-describedby="basic-addon1">
   </div>
-</template>
+  <div class="input-group mb-3">
+    <span class="input-group-text" id="basic-addon1">🕶️</span>
+    <input type="password" class="form-control" placeholder="Contraseña" aria-label="contrasena" aria-describedby="basic-addon1">
+  </div>
+  <div>
+    <RouterLink to="/inicioCRM"> Inicio CRM </RouterLink>
+    <RouterLink to="/recuperarContrasena"> Recuperar contraseña </RouterLink>
+  </div>
+  </template>

@@ -4,6 +4,7 @@ import inicioCRM from './components/inicioCRM.vue'
 import admin from './components/admin.vue'
 import loginPerfil from './components/loginPerfil.vue'
 import crearPerfil from './components/crearPerfil.vue'
+import recuperarContrasena from './components/recuperarContrasena.vue'
 const rutas = [
     {
         path: '/frontendCRM',
@@ -24,6 +25,10 @@ const rutas = [
     {
         path: '/crearPerfil',
         component: crearPerfil
+    },
+    {
+        path: '/recuperarContrasena',
+        component: recuperarContrasena
     },
     {
         path: '/:pathMatch(.*)*',
