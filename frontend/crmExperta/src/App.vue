@@ -4,35 +4,36 @@ import imgCRM from './assets/logoExperta.png'
 const route = useRoute()
 </script>
 
-// el p es solo para saber en que ventada me encuentro
 <template>
-  <p><strong>Ruta actual:</strong> {{ route.path }}</p>
-  <nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
+  <div class="bg-light-subtle ">
+  <nav class="navbar bg-light">
+    <div class="container-fluid" >
       <a class="navbar-brand" href="#">
         <img :src="imgCRM" alt="Logo" width="30" height="30"
-          class="d-inline-block align-text-top">
+          class="d-inline-block align-text-top">  
         EXPERTA&ABOGADOS
       </a>
     </div>
   </nav>
-  <nav class="container">
-    <RouterLink to="/frontendCRM"> Inicio </RouterLink>
-    <RouterLink to="/inicioCRM"> Inicio CRM </RouterLink>
-    <RouterLink to="/admin"> Admin </RouterLink>
-    <RouterLink to="/loginPerfil"> Iniciar sesión </RouterLink>
-    <RouterLink to="/crearPerfil"> Registrarse </RouterLink>
-    <RouterLink to="/recuperarContrasena"> Recuperar contraseña </RouterLink>
+  <nav class="container m-center text-center mb-5 mt-2">
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/frontendCRM "> Inicio </RouterLink>
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/inicioCRM"> Inicio CRM </RouterLink>
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/admin"> Admin </RouterLink>
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/loginPerfil"> Iniciar sesión </RouterLink>
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/crearPerfil"> Registrarse </RouterLink>
+    <RouterLink type="button" class="btn btn-primary mx-1 my-1" to="/recuperarContrasena"> Recuperar contraseña </RouterLink>
   </nav>
   <main class="container">
     <RouterView />
   </main>
+  </div>
 </template>
+
 <style scoped>
 .navbar-brand {
   display: flex;
   align-items: center;
   gap: 10px;
-
 } 
+
 </style>

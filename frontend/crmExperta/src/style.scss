@@ -1,7 +1,11 @@
 @import "bootstrap/scss/functions";
-
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 $primary: #dab656;
 $secondary: #c6c6c6;
+$dark: #212529;
+$light: #e4e4e4;
+
+
 
 @import "bootstrap/scss/variables";
 
@@ -9,7 +13,9 @@ $theme-colors: map-merge(
     $theme-colors, 
     (
         "primary": $primary,
-        "secondary": $secondary
+        "secondary": $secondary,
+        "dark": $dark,
+        "light": $light
     )
 );  
 
@@ -17,3 +23,11 @@ $theme-colors: map-merge(
 @import "bootstrap/scss/mixins";
 @import "bootstrap/scss/utilities";
 @import "bootstrap/scss/bootstrap";
+body {
+      font-family: "Manrope", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+};

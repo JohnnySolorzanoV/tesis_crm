@@ -15,6 +15,7 @@ registroRoutes.post('/crearCuenta', async (req, res) => {
     res.status(500).json({ error: 'No se pudo crear la cuenta' });
   }
 });
+
 registroRoutes.get('/listasTodas', async (req, res) => {
   try {
     const listas = await obtenerTodos();
